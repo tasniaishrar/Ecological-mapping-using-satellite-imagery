@@ -10,9 +10,11 @@ Using Deep Convolutional Neural Network Models and Remote Sensing Change Detecti
 # Code Setup 
 
 ## Scripts
+For the GPT_RSCD notebook, install the following libraries before use: openai, numpy, opencv
 
 ## Frontend 
 
 ## Backend 
 
 ## Loaders 
+For the data loader APIs, install the boto3 library
