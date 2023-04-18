@@ -17,4 +17,4 @@ For the GPT_RSCD notebook, install the following libraries before use: openai, n
 ## Backend 
 
 ## Loaders 
-For the data loader APIs, install the boto3 library
+For the data loader APIs, install the following libraries: boto3, pillow, matplotlib, numpy, BytesIO, opencv
