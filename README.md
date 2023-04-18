@@ -3,7 +3,7 @@
 ## Project Brief 
 
 ### Team Members 
-| Name        | UID  |
+| *Name*        | *UID*  |
 | ----------- | ----------- |
 | Yashwardhann Kumar      | 3035662699       |
 | Areeb Nadeem   | Text        |
