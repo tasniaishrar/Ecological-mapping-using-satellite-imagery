@@ -12,6 +12,8 @@ Using Deep Convolutional Neural Network Models and Remote Sensing Change Detecti
 ## Scripts
 For the GPT_RSCD notebook, install the following libraries before use: openai, numpy, opencv
 
+For the training model notebooks, install mmcv and mmsegmentation and run the programs. 
+
 ## Frontend 
 
 ## Backend 
