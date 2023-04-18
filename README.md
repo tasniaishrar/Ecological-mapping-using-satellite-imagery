@@ -1,6 +1,14 @@
 # Ecological Mapping Using Satellite Imagery
 
 ## Project Brief 
+
+### Team Members 
+| Name        | UID  |
+| ----------- | ----------- |
+| Yashwardhann Kumar      | 3035662699       |
+| Areeb Nadeem   | Text        |
+| Tasnia Ishrar Rahman   | Text        |
+| Archit Verma   | Text        |
 ### Overview
 The Earth's surface is continually changing and it is concerning how quickly such environmental issues are intensifying as a result of unsustainable patterns of consumption and production by humans. It is clear that we are in the midst of a global climate crisis, one that will only worsen if nothing is done to stop its effects. This report's goal is to offer a technology-driven recommendation that will help educate the public and the appropriate decision-makers on the effects of the climate disaster that human activity is causing.
 
