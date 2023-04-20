@@ -1,0 +1,33 @@
+.uploadBox {
+	border-color: white;
+	border-style: dashed;
+	width: 40%;
+	height: 62vh;
+	background-color: rgba(140, 140, 140, 0.25);
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.uploadScreen {
+	gap: 10vh;
+	margin-top: 5vh;
+	width: 100%;
+}
+
+.resultContainer {
+	width: 100%;
+	background-color: black;
+}
+
+button {
+	font-size: 1.7vh;
+	background-color: darkblue;
+	color: white;
+	outline: none;
+  }
+  
+  button:hover {
+	background-color: white;
+	color: black;
+	cursor: pointer;
+  }

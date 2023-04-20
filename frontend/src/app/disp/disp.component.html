@@ -1,0 +1,286 @@
+
+<div *ngIf="up" class="flex row">
+	<div class="flex col sidebar">
+		<div class="icon flex center" (click)="showOG()"> Input Image </div>
+		<div class="icon flex center" (click)="showML()"> Predicted Mask </div>
+		<div class="icon flex center" (click)="showRSCD()"> RSCD </div>
+		<div class="icon flex center" (click)="showGPT()"> GPT </div>
+	</div>
+
+	<div *ngIf="og" class="flex row center main">
+		<div class="image flex center col">
+			<img [src]="temp[0].og[1].data" width="65%"/>
+			<h5>{{temp[0].og[1].name.split("_", 1)}}</h5>
+		</div>
+		<div class="image flex center col">
+			<img [src]="temp[0].og[0].data" width="65%"/>
+			<h5>{{temp[0].og[0].name.split("_", 1)}}</h5>
+		</div>
+	</div>
+
+	<div *ngIf="ml" class="flex row center main">
+		<div class="image flex center col">
+			<img [src]="temp[0].ml[1].data" width="65%" />
+			<h5> {{ temp[0].ml[1].name.split(".", 1) }} </h5>
+		</div>
+		<div class="image flex center col">
+			<img [src]="temp[0].ml[0].data"  width="65%" />
+			<h5> {{ temp[0].ml[0].name.split(".", 1) }} </h5>
+		</div>
+	</div>
+
+	<div *ngIf="rs" class="flex center col main">
+		
+		<div class="bar flex center col">
+			<ul class="flex row gap">
+				<li><button  (click)="rscdImage('Bareland')">Bareland</button></li>
+				<li><button (click)="rscdImage('Buildings')">Buildings</button></li>
+				<li><button (click)="rscdImage('Grass')">Grass</button></li>
+				<li><button (click)="rscdImage('Pavemnet')">Pavemnet</button></li>
+				<li><button (click)="rscdImage('Road')">Road</button></li>
+				<li><button (click)="rscdImage('Tree')">Tree</button></li>
+				<li><button (click)="rscdImage('Water')">Water</button></li>
+				<li><button (click)="rscdImage('Cropland')">Cropland</button></li>
+			</ul>
+		</div>
+		<div>
+			<div class="image flex col" *ngFor="let i of temp[0].rscd">
+				<div class="flex center col" *ngIf="bare&&'Bareland'==i.name.split('.',1)">
+						<img  [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5> 
+				</div>
+				<div class="flex center col" *ngIf="build&&'buildings'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="grass&&'Grass'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="pave&&'Pavement'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="road&&'Road'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="tree&&'Tree'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="water&&'Water'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="crop&&'Cropland'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div *ngIf="gpt" class="flex row center main">
+		<div class="bar flex center col">
+			<ul class="flex row line">
+				<li><button (click)="gpt_res('gpt_pre_post')">Pre and Post Disaster Analysis</button></li>
+				<li><button (click)="gpt_res('gpt_rec')">Recommendations</button></li>
+				<li><button (click)="gpt_res('gpt_agri')">Agricultural Reform</button></li>
+				<li><button (click)="gpt_res('gpt_dis')">Disaster Management</button></li>
+				<li><button (click)="gpt_res('gpt_con')">Environmental Conservation</button></li>
+				<li><button (click)="gpt_res('gpt_urb')">Urban Planning</button></li>
+			</ul>
+			<div class="flex center marg">
+				<div style="white-space: pre-wrap; color: white;" *ngIf="pp" class="flex ">{{ temp[0].gpt_pre_post }}</div>
+				<div style="white-space: pre-wrap; color: white;" *ngIf="rec" class="flex ">{{ temp[0].gpt_rec }}</div>
+				<div style="white-space: pre-wrap; color: white;" *ngIf="agri" class="flex ">{{ temp[0].gpt_agri }}</div>
+				<div style="white-space: pre-wrap; color: white;" *ngIf="dis" class="flex ">	{{ temp[0].gpt_dis }}</div>
+				<div style="white-space: pre-wrap; color: white;" *ngIf="con" class="flex ">	{{ temp[0].gpt_con }}</div>
+				<div style="white-space: pre-wrap; color: white;" *ngIf="urb" class="flex ">	{{ temp[0].gpt_urb }}</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="flex row" *ngIf="up==false">
+	<div class="flex col sidebar">
+		<div class="icon flex center" (click)="showOG()"> Input Image </div>
+		<div class="icon flex center" (click)="showML()"> Predicted Mask </div>
+		<div class="icon flex center" (click)="showRSCD()">RSCD </div>
+		<!-- <div class="icon flex center" (click)="showGPT()"> GPT </div> -->
+	</div>
+	<div *ngIf="og" class="flex row center main">
+		<div class="image flex center col">
+			<img [src]="temp[0].og[1].data" width="65%"/>
+			<h5>{{temp[0].og[1].name.split("_", 1)}}</h5>
+		</div>
+		<div class="image flex center col">
+			<img [src]="temp[0].og[0].data" width="65%"/>
+			<h5>{{temp[0].og[0].name.split("_", 1)}}</h5>
+		</div>
+	</div>
+	<div *ngIf="ml" class="flex row center main">
+		<div class="image flex center col">
+			<img [src]="temp[0].ml[1].data" width="65%" />
+			<h5> {{ temp[0].ml[1].name.split(".", 1) }} </h5>
+		</div>
+		<div class="image flex center col">
+			<img [src]="temp[0].ml[0].data"  width="65%" />
+			<h5> {{ temp[0].ml[0].name.split(".", 1) }} </h5>
+		</div>
+	</div>
+
+	<div *ngIf="rs" class="flex center main col">
+		
+		<div class="bar flex center col">
+			<ul class="flex row gap">
+				<li><button  (click)="rscdImage('Bareland')">Bareland</button></li>
+				<li><button (click)="rscdImage('Buildings')">Buildings</button></li>
+				<li><button (click)="rscdImage('Grass')">Grass</button></li>
+				<li><button (click)="rscdImage('Pavemnet')">Pavement</button></li>
+				<li><button (click)="rscdImage('Road')">Road</button></li>
+				<li><button (click)="rscdImage('Tree')">Tree</button></li>
+				<li><button (click)="rscdImage('Water')">Water</button></li>
+				<li><button (click)="rscdImage('Cropland')">Cropland</button></li>
+			</ul>
+		</div>
+		<div>
+			<div class="image flex col" *ngFor="let i of temp[0].rscd">
+				<div class="flex center col" *ngIf="bare&&'Bareland'==i.name.split('.',1)">
+						<img  [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5> 
+				</div>
+				<div class="flex center col" *ngIf="build&&'buildings'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="grass&&'Grass'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="pave&&'Pavement'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="road&&'Road'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="tree&&'Tree'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="water&&'Water'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+				<div class="flex center col" *ngIf="crop&&'Cropland'==i.name.split('.',1)">
+						<img [src]="i.data" width="50%"/>
+						<h5>{{i.name.split('.',1)}}</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div *ngIf="gpt" class="flex row center main">
+		<div class="bar flex center col">
+			<ul class="flex row gap">
+				<li><button style="color:white" (click)="gpt_res('gpt_rec')">Recommendations</button></li>
+			</ul>
+			<div class="flex">
+				<div  class="flex "><p style="color:white">{{ temp[0].gpt_rec }}</p></div>
+			</div>
+		</div>
+	</div> -->
+</div>
+
+
+
+
+
+
+
+
+<!-- 
+
+<div *ngIf="map" class="resultContainer flex col">
+
+<br /> <hr /> 
+
+	<h5>Original Images we fetched from backend:</h5>
+	<div class="imgContainer center flex row">
+		<div class="flex row center" *ngFor="let img of original">
+			<div class="flex col center">
+				<img [src]="img.data" width="50%"/>
+				<p> {{ img.name }} </p>
+			</div>
+		</div>
+	</div>
+
+	<br /> <hr />
+
+	<h5>The segmented images from the Segmentation Model</h5>
+	<div class="imgContainer center flex row">
+		<div class="flex row center" *ngFor="let img of MLimages">
+			<div class="flex center col">
+				<img [src]="img.data" width="50%"/>
+				<p> {{ img.name }} </p>
+			</div>
+		</div>
+	</div>
+
+	<br /> <hr />
+
+	<h5>The images from the RSCD model</h5>
+	<div class="imgContainer center flex row rap">
+		<div class="flex row center gap" *ngFor="let img of RSCDimages">
+			<div class="flex col">
+				<img [src]="img.data" width="60%"/>
+				<p> {{ img.name }} </p>
+			</div>
+		</div>
+	</div>
+
+	<br /> <hr />
+
+	<h5>Analysis</h5>
+	<div class="gptResp center flex col">
+		<p>{{gpt_text}}</p>
+		<p>{{gpt_text2}}</p>
+	</div>
+</div>
+
+<div *ngIf="map==false" class="resultContainer flex col">
+	<br /> <hr />
+
+	<h5>The segmented images from the Segmentation Model</h5>
+	<div class="imgContainer center flex row">
+		<div class="flex row center" *ngFor="let img of MLimages">
+			<div class="flex center col">
+				<img [src]="img.data" width="50%"/>
+				<p> {{ img.name }} </p>
+			</div>
+		</div>
+	</div>
+
+	<br /> <hr />
+
+	<h5>The images from the RSCD model</h5>
+	<div class="imgContainer center flex row">
+		<div class="flex row center" *ngFor="let img of RSCDimages">
+			<div class="flex col">
+				<img [src]="img.data" width="60%"/>
+				<p> {{ img.name }} </p>
+			</div>
+		</div>
+	</div>
+
+	<br /> <hr />
+
+	<h5>Analysis</h5>
+	<div class="gptResp center flex col">
+		<p>{{gpt_text}}</p>
+	</div>
+
+</div> -->

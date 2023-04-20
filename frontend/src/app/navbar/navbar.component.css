@@ -1,0 +1,8 @@
+.navItems {
+	gap: 15vh;
+}
+
+.navItems a:hover {
+	cursor: pointer;
+	color: lightblue;
+}

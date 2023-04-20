@@ -1,0 +1,24 @@
+<div *ngIf="u" class="uploadScreen flex col center">
+	<div class="flex row center uploadScreen ">
+		<div class="uploadBox flex col center">
+			<img [src]="imageSrcBefore" height="300vh" width="400vh"/>
+			<input type='file' (change)="setBeforeImg($event);" />
+		</div>
+
+		<div class="uploadBox flex col center">
+			<img [src]="imageSrcAfter" height="300vh" width="400vh"/>
+			<input type='file' (change)="setAfterImg($event);" />
+		</div>
+	</div>
+	<div class="flex row center"> 
+		<button (click)="mainUpload()">Upload Images</button>
+		<div *ngIf="sent&&recieved==false">
+			<button (click)="getUp()">get results</button>
+		</div>
+	</div>	
+</div>
+
+<div class="resultContainer" *ngIf="recieved && u==false">
+	<!-- <app-disp [from]="'upload'" [original]="'none'" [gpt_text2]="'none'" [MLimages]="images[0].ml" [RSCDimages]="images[0].rscd" [gpt_text]="images[0].gpt_res"></app-disp> -->
+	<app-disp [up]="false" [temp]="images"></app-disp>
+</div>

@@ -1,0 +1,23 @@
+<app-navbar class="flex center" (back)="nav($event)" [h]="h"></app-navbar>
+<div class="homeContainer flex col center" *ngIf="h">
+	<h5> Please Select which service you would like to use:</h5>
+	<br />
+	<div class="optionContainer flex row">
+		<a (click)="map()"> 
+			<div class="option flex center">
+			<p>MAP</p>
+			</div>
+		</a>
+		<a (click)="upload()">
+			<div class="option flex center">
+				<p>UPLOAD</p>
+			</div>
+		</a>
+	</div>
+</div>
+
+<app-map (disp)="showDisp($event)" *ngIf="showMap && h==false"></app-map>
+<app-upload *ngIf="showUpload && h==false"></app-upload>
+
+<!-- <app-disp *ngIf="dispShow && h==false" [from]="'map'" [original]="dispDat[0].og" [RSCDimages]="dispDat[0].rscd" [gpt_text]="dispDat[0].first_res" [gpt_text2]="dispDat[0].second_res" [MLimages]="dispDat[0].ml"></app-disp> -->
+<app-disp *ngIf="dispShow && h==false" [up]="true" [temp]="dispDat"></app-disp>

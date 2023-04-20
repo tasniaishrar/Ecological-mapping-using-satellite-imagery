@@ -1,0 +1,11 @@
+<div class="flex col center" *ngIf="h">
+	<h2>Ecological Mapping of Multi-Temporal Satellite Images</h2>
+</div>
+
+<div class="flex row navItems center" *ngIf="h==false">
+	<h4><a (click)="goBack()">HOME</a></h4>
+	<h4><a (click)="goMap()">MAP</a></h4>
+	<h4><a (click)="goUpload()">UPLOAD</a></h4>
+	<!-- <h4><a>UPLOAD</a></h4>
+	<h4><a>MAP</a></h4> -->
+</div>

@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+html, body {
+	margin: 0;
+	height: 98%;
+	width: 100%;
+	/* background-image: url(
+		"src/assets/Images/altbg.jpg"
+	);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover; */
+	font-family: Raleway;
+	color: white;
+	background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+}
+
+.flex {
+	display: flex;
+}
+.center {
+	justify-content: center;
+	align-items: center;
+}
+.row {
+	flex-direction: row;
+}
+.col {
+	flex-direction: column;
+}

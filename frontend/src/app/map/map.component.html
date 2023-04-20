@@ -1,0 +1,25 @@
+<div class=" flex col center mapContainer">
+	<div id="map" class="map" (click)="updateCenter()"></div>
+	<div class="flex cordContainer center row">
+		<div class="cord flex center">{{place}}</div>
+		<div class="send"><a href="#result"><button (click)="onClickMe('0')">Send</button></a></div>
+	</div>
+</div>
+<div class="buttonContainer flex row center">
+	<div class="buttons flex cetner">
+		<button id="socal" (click)="setView($event)">Socal Fire, South California</button> 
+		<button id="santa" (click)="setView($event)">Santa Rosa Wildfire, Santa Rosa California</button> 
+		<button id="palu" (click)="setView($event)">Palu Tsunami, Palu Indonesia</button> 
+		<button id="midwest" (click)="setView($event)">Midwest Floods, Midwestern USA</button> 
+		<button id="mex" (click)="setView($event)">Mexico Earthquake, Michoacan Mexico</button> 
+		<button id="michael" (click)="setView($event)">Hurricane Michael, Florida USA</button> 
+		<button id="mathew" (click)="setView($event)">Hurricane Mathew, Haiti</button> 
+		<button id="harvey" (click)="setView($event)">Hurricane Harvey, Louisiana USA</button> 
+		<button id="florence" (click)="setView($event)">Hurricane Florence, North Carolina</button> 
+		<button id="guatamela" (click)="setView($event)">Guatemala Volcano, Guatemala</button> 
+	</div>
+</div>
+
+<!-- <div class="resultContainer" id="result" *ngIf="received">
+	<app-disp [from]="'map'" [original]="data[0].og" [RSCDimages]="data[0].rscd" [gpt_text]="data[0].first_res" [gpt_text2]="data[0].second_res" [MLimages]="data[0].ml"></app-disp>
+</div> -->

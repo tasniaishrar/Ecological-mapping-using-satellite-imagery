@@ -1,0 +1,108 @@
+.imgContainer {
+	width:70%;
+}
+
+hr {
+	width: 100%;
+}
+.rap {
+	flex-wrap: wrap;
+}
+
+.gap {
+	gap: 2vh;
+}
+
+
+.sidebar {
+	height: 90vh;
+	background-color: white;
+	border-radius: 0px 15px 15px 0px;
+	width: 8%;
+	position: relative;
+	flex-grow: 0;
+	flex-shrink: 0;
+	color: black;
+}
+
+.icon {
+	width: 100%;
+	height: 22vh;
+	border: 1px solid black;
+	color: black;
+}
+
+.icon:active {
+	background-color: black;
+	color: white;
+			
+}
+
+.icon  {
+	font-size: 1.7vh;
+	background-color: darkblue;
+	color: white;
+	outline: none;
+  }
+  
+.icon:hover {
+	background-color: white;
+	color: black;
+	cursor: pointer;
+  }
+
+.main {
+	width: 100%;
+}
+
+
+.bar {
+	padding: 3vh;
+
+}
+
+ul {
+	list-style-type: none;
+}
+
+ul li button {
+	height: 4vh;
+	background-color: cadetblue;
+	color: white; 
+	margin: 1vh;
+}
+
+ul li button:hover {
+	height: 4vh;
+	color: black;
+	background-color: white;
+	cursor: pointer;
+}
+
+ul li button:active{
+	height: 4vh;
+	color: cadetblue;
+	background-color: black;
+}
+
+ul li button:focus{
+	height: 4vh;
+	color: cadetblue;
+	background-color: black;
+}
+
+.bar {
+	color: black;
+}
+
+.col li button {
+	color: white;
+}
+
+.line li button {
+color: white
+}
+
+.marg {
+	padding: 4vh;
+}
