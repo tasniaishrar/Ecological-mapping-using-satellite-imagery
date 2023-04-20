@@ -48,7 +48,7 @@ Install dependencies (not needed if running backend env)
 ```$pip install --upgrade openai```  
 ```$pip install opencv-python```  
 ```$pip install torch==1.12.0 torchvision --extra-index-url https://download.pytorch.org/whl/cu113```   
-```$pip install "mmsegmentation>=0.30.0"```  
+```$pip install "mmsegmentation==0.30.0"```  
 ```$pip install openmim```  
 ```$mim install mmcv-full==1.6.0```  
 ```$mim install mmengine```
