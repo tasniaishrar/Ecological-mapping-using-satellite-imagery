@@ -15,49 +15,49 @@ For the GPT_RSCD notebook, install the following libraries before use: openai, n
 For the training model notebooks, install mmcv and mmsegmentation and run the programs. 
 
 ## Frontend 
-Install angular
-$npm install -g @angular/cli
+Install angular  
+```$npm install -g @angular/cli```
 
-Install Dependencies
-$npm install --save ol @planet/client
+Install Dependencies  
+```$npm install --save ol @planet/client```
 
-Run the frontend
-$ng serve --open
+Run the frontend  
+```$ng serve --open```
 
 It runs on http://localhost:4200/
 
 ## Backend 
 NOTE: Run the backend using conda
-Activate the virtual env 'backendenv'
-$conda activate backendenv
-In case virtual env is not working create a new one and add following dependencies
+Activate the virtual env 'backendenv'  
+```$conda activate backendenv```  
+In case virtual env is not working create a new one and add following dependencies  
 
-create new env
-$pip install virtualenv
-$virtualenv <my_env_name>
-$<my_env_name>/Scripts/activate
+Create new env  
+```$pip install virtualenv```  
+```$virtualenv <my_env_name>```  
+```$<my_env_name>/Scripts/activate```  
 
-Install dependencies
-$pip install django
-$pip install planet
-$pip install geojsonio
-$pip install django-ninja
-$python -m pip install django-cors-headers
-$pip install numpy
-$pip install pillow
-$pip install boto3
-$pip install matplotlib
-$pip install --upgrade openai
-$pip install opencv-python
-$pip install torch==1.12.0 torchvision --extra-index-url https://download.pytorch.org/whl/cu113
-$pip3 install mmcv-full==1.6.0 -f https://download.openmmlab.com/mmcv/dist/cpu/torch1.8.0/index.html
-$pip install openmim
-$!mim install mmcv-full==1.6.0
+Install dependencies (not needed if running backend env)  
+```$pip install django```  
+```$pip install planet```  
+```$pip install geojsonio```  
+```$pip install django-ninja```  
+```$python -m pip install django-cors-headers```  
+```$pip install numpy```  
+```$pip install pillow```  
+```$pip install boto3```  
+```$pip install matplotlib```  
+```$pip install --upgrade openai```  
+```$pip install opencv-python```  
+```$pip install torch==1.12.0 torchvision --extra-index-url https://download.pytorch.org/whl/cu113```  
+```$pip3 install mmcv-full==1.6.0 -f https://download.openmmlab.com/mmcv/dist/cpu/torch1.8.0/index.html```  
+```$pip install openmim```  
+```$!mim install mmcv-full==1.6.0```  
 
-Run the backend server
-$python manage.py runserver
+Run the backend server  
+```$python manage.py runserver```  
 
-Runs on http://localhost:8000/
+Runs on http://localhost:8000/  
 
 ## Loaders 
 For the data loader APIs, install the following libraries: boto3, pillow, matplotlib, numpy, BytesIO, opencv
