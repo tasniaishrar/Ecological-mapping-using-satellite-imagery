@@ -58,7 +58,7 @@ Run the backend server
 
 Runs on http://localhost:8000/  
 
-To check out the interface downlaod and extract the file from this link ->  
+To check out the interface downlaod and extract the file from this link -> https://drive.google.com/file/d/1O_QBxytSSyjd4Mug9NzjbmYI20ypkJkj/view?usp=share_link   
 Can be run using above commnads  
 
 ## Loaders 
