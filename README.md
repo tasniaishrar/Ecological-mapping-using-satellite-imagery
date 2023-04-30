@@ -63,3 +63,6 @@ Can be run using above commnads
 
 ## Loaders 
 For the data loader APIs, install the following libraries: boto3, pillow, matplotlib, numpy, BytesIO, opencv
+
+### P.S. 
+The AWS access key and secret access key on this repo has been deactivated due to security reasons. Please reach out at tasnia@connect.hku.hk to get the keys we are using for this project.
